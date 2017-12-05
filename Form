@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+	<h3>Test Form</h3>
+<script language="Javascript">
+    var counter = 1;
+    var limit = 50;
+    
+    function addInput(divName){
+         if (counter == limit) {
+			alert("You may not request more than 50 items");
+         }
+         else {
+              var newdiv = document.createElement('div');
+              newdiv.innerHTML = "<input type='number' name='items[][count]' min='1' max='300' step='1' label='Quantity'>" +
+		"  <input type='text' name='items[][number]' label='Item Number' size='5'>" +
+		"  <input type='text' name='items[][description]' label='Item Description' size='35'>"+
+		"  <input type='number' name='items[][price]' min='0' max='1000' step='0.01' label='Unit Price'>";
+              document.getElementById(divName).appendChild(newdiv);
+              counter++;
+         }
+    }
+</script>
+</head>
+<body>
+	<form method='post' action='http://localhost/practice.php' onsubmit = 'jsonCreate()'>
+	<fieldset> <legend> Vendor Information </legend>
+	Vendor Name: <input type='text' name='vName' value = 'School Supplies Inc'><br>
+	Vendor Address: <input type='text' name='vAddress1' value = '123 Main St.'><br>
+	<input type = 'text' name = 'vAddress2' value = 'Akron, OH 44444'><br>
+	Vendor Phone: <input type = 'text' name = 'vPhone' value = '123-456-7890'><br>
+	</fieldset><br>
+	<fieldset> <legend> Product Information </legend>
+	Item Description:<br><input type = 'textarea' name = 'itemDescription' value = 'Math textbooks for students in the nonpublic school'>
+	<div id = 'dynamicInput'><br>
+	Quantity	Item Number	Item Description	Unit Price
+	</div><br>
+	<input type="button" value="Add an item" onClick="addInput('dynamicInput');"><br>
+	</fieldset><br>
+	<div>
+	<input type='submit' name='submit' value='Submit'>
+	</div>
+	</form>
+</body>
+</html>
