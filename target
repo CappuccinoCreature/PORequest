@@ -1,0 +1,39 @@
+<?php
+	$vName = $_POST['vName'];
+	$vAddress1 = $_POST['vAddress1'];
+	$vAddress2 = $_POST['vAddress2'];
+	$vPhone = $_POST['vPhone'];
+	$itemDescription = $_POST['itemDescription'];
+
+	echo '<h4>Purchase Order Request</h4><br>';
+	echo $vName, '<br>';
+	echo $vAddress1, '<br>';
+	echo $vAddress2, '<br>';
+	echo $vPhone, '<br><br>';
+	echo '<table border=1>
+	<tr>
+	<th>Description Summary:</th>
+	</tr>
+	<tr>
+	<td>', $itemDescription,
+	'</td></tr></table>';
+	echo '<table border=1><br><br>
+		<tr>
+		<th>Quantity</th>
+		<th>Item Number</th>
+		<th>Item Description</th>
+		<th>Unit Price</th>
+		<th>Line Total</th>
+		</tr>';
+	if ( isset( $_POST['items'] ) )
+	{
+	foreach ( $_POST['items'] as $item ) {
+	        echo '<tr><td>', $item['count'], '</td>
+		<td>', $item['number'], '</td>
+		<td>', $item['description'], '</td>
+		<td>', $item['price'], '</td>
+		<td>', $item['count']*$item['price'], '</td></tr>';
+		}
+	}
+	echo '</table>';
+?>
