@@ -7,7 +7,7 @@
 	<script>
 		$(() => {
 			var $form = $('#form')
-			var url = 'https://script.google.com/a/theelms.org/macros/s/AKfycbzuCEQ3pZJJyMjHa1hcW7emqtUT17eNnm94ypil4l8/dev'
+			var url = 'https://script.google.com/a/theelms.org/macros/s/AKfycbzbbcxOfU4t_Xz9d4jrzif4wdS9d41leHHP96BsDcnyp7ZQTg4/exec'
 			$('#submit').on('click', function(e) {
 				e.preventDefault();
 				var jqxhr = $.ajax({
@@ -44,6 +44,11 @@
 	<h3>Purchase Request</h3>
 	<form id="form" method='post'>
 		<fieldset>
+			<legend>You</legend>
+			Your Name: <input type='text' name='rName' value='Joe Bloggs'><br>
+			Your Email Address: <input type='text' name='rEmail' value='joe@example.com'><br>
+		</fieldset>
+		<fieldset>
 			<legend>Vendor Information</legend>
 			Vendor Name: <input type='text' name='vName' value='School Supplies Inc'><br>
 			Vendor Address: <input type='text' name='vAddress1' value='123 Main St.'><br>
@@ -53,11 +58,69 @@
 		<br>
 		<fieldset>
 			<legend>Product Information</legend>
-			Item Description:<br><input type='textarea' name='itemDescription' value='Math textbooks for students in the nonpublic school'>
-			<div id='dynamicInput'><br>
-			Quantity	Item Number	Item Description	Unit Price
-			</div><br>
-			<input type="button" value="Add an item" onClick="addInput('dynamicInput')"><br>
+			Item Description:<br><input type='textarea' name='description' value='Math textbooks for students in the nonpublic school'>
+			<table>
+				<tr>
+					<th>Quantity</th>
+					<th>Item Number</th>
+					<th>Item Description</th>
+					<th>Unit Price</th>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty0' min='1' label='Quantity'></td>
+					<td><input type='text' name='num0' label='Item number'></td>
+					<td><input type='text' name='desc0' label='Quantity'></td>
+					<td><input type='number' name='price0' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty1' min='1' label='Quantity'></td>
+					<td><input type='text' name='num1' label='Item number'></td>
+					<td><input type='text' name='desc1' label='Quantity'></td>
+					<td><input type='number' name='price1' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty2' min='1' label='Quantity'></td>
+					<td><input type='text' name='num2' label='Item number'></td>
+					<td><input type='text' name='desc2' label='Quantity'></td>
+					<td><input type='number' name='price2' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty3' min='1' label='Quantity'></td>
+					<td><input type='text' name='num3' label='Item number'></td>
+					<td><input type='text' name='desc3' label='Quantity'></td>
+					<td><input type='number' name='price3' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty4' min='1' label='Quantity'></td>
+					<td><input type='text' name='num4' label='Item number'></td>
+					<td><input type='text' name='desc4' label='Quantity'></td>
+					<td><input type='number' name='price4' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty5' min='1' label='Quantity'></td>
+					<td><input type='text' name='num5' label='Item number'></td>
+					<td><input type='text' name='desc5' label='Quantity'></td>
+					<td><input type='number' name='price5' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty6' min='1' label='Quantity'></td>
+					<td><input type='text' name='num6' label='Item number'></td>
+					<td><input type='text' name='desc6' label='Quantity'></td>
+					<td><input type='number' name='price6' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty7' min='1' label='Quantity'></td>
+					<td><input type='text' name='num7' label='Item number'></td>
+					<td><input type='text' name='desc7' label='Quantity'></td>
+					<td><input type='number' name='price7' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+				<tr>
+					<td><input type='number' name='qty8' min='1' label='Quantity'></td>
+					<td><input type='text' name='num8' label='Item number'></td>
+					<td><input type='text' name='desc8' label='Quantity'></td>
+					<td><input type='number' name='price8' min='0' step='0.01' label='Unit price'></td>
+				</tr>
+			</table>
 		</fieldset><br>
 		<div>
 			<input id="submit" type='submit' name='submit' value='Submit'>
