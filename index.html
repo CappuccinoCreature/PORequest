@@ -49,7 +49,7 @@
 				<tr><td>Your Name:</td><td><input type='text' name='rName' value='Joe Bloggs'></td></tr>
 				<tr><td>Your Email Address:</td><td><input type='text' name='rEmail' value='joe@example.com'></td></tr>
 			</table>
-		</fieldset>
+		</fieldset><br>
 		<fieldset>
 			<legend>Vendor Information</legend>
 			<table border=0 padding=1>
@@ -124,7 +124,11 @@
 					<td><input type='text' name='desc8' label='Quantity'></td>
 					<td><input type='number' name='price8' min='0' step='0.01' label='Unit price'></td>
 				</tr>
-			</table>
+			</table><br>
+		Shipping Unit<br>
+		<input type='radio' name='shipUnit' value='Percent'><br>
+		<input type='radio' name='shipUnit' value='Dollar Amount'><br>
+		<input type='number' name='shipCost' min=0 step=0.01 label='Shipping Cost'>
 		</fieldset><br>
 		<div>
 			<input id="submit" type='submit' name='submit' value='Submit'>
