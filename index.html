@@ -45,8 +45,10 @@
 	<form id="form" method='post'>
 		<fieldset>
 			<legend>You</legend>
-			Your Name: <input type='text' name='rName' value='Joe Bloggs'><br>
-			Your Email Address: <input type='text' name='rEmail' value='joe@example.com'><br>
+			<table border=0 padding=1>
+				<tr><td>Your Name:</td><td><input type='text' name='rName' value='Joe Bloggs'></td></tr>
+				<tr><td>Your Email Address:</td><td><input type='text' name='rEmail' value='joe@example.com'></td></tr>
+			</table>
 		</fieldset>
 		<fieldset>
 			<legend>Vendor Information</legend>
@@ -60,7 +62,7 @@
 		<br>
 		<fieldset>
 			<legend>Product Information</legend>
-			Item Description:<br><input type='textarea' name='description' value='Math textbooks for students in the nonpublic school'>
+			Item Description:<br><input type='textarea' name='description' value='Math textbooks for students in the nonpublic school'></input>
 			<table>
 				<tr>
 					<th>Quantity</th>
